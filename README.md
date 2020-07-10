@@ -26,24 +26,24 @@
 2. 然后要回答一些问题，比如$$MatConvNet$$是否已经编译过和选择的数据集是否为$$mat$$文件（即数据集是否已经完成特征提取）。如果网络为编译过，则之后系统会自动进行编译，不过需要一点时间。如果数据集没有完成特征提取，则之后选择数据集文件夹，系统会自动进行特征提取，但也要消耗一点时间。
 
    <p align="center">勾选回答问题</p>
-   <p align="center"><img src="README_Image\2.png"  width = 400 alt="search result"/></p>
+   <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/2.png"  width = 400 alt="search result"/></p>
 
 3. 之后就是根据前面回答的问题进行数据集的选取并判断是否需要提取特征向量。如果前面勾选了数据集是$$mat$$文件的话这里的数据集只能选择$$mat$$文件，且系统自动根据文件名字判断数据的维数；反之则只能选择文件，$$Extract\ features$$按钮将可用，用户需手动选择提取的特征维数。
 
    <p align="center">数据集相关操作</p>
-   <p align="center"><img src="README_Image\3.png"  width = 400 alt="search result"/></p>
+   <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/3.png"  width = 400 alt="search result"/></p>
 
 4. 最后就是开始检索。用户可通过调整$$Retrieval\ Number$$来选择检索结果返回图片数，然后点击$$Start\ retrieval$$选择需要检索的图像，然后等待输出结果即可。
 
 <p align="center">开始检索</p>
-<p align="center"><img src="README_Image\4.png"  height = 250 width = 300 alt="search result"/></p>
+<p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/4.png"  height = 250 width = 300 alt="search result"/></p>
 
 5. 检索结果可直接在用户界面下方看到。排名从高到低会从左到右输出，并且输出此次检索的用时。如果用户选择的返回结果图片数大于3，则结果会通过弹窗的方式显示。
 
 <p align="center">返回结果</p>
-<p align="center"><img src="README_Image\5.png"  height = 200 width = 500 alt="search result"/></p>
+<p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/5.png"  height = 200 width = 500 alt="search result"/></p>
 
 6. 在用户界面最下方可以选择数据集，并点击$$Calculate$$按钮计算数据集在该系统下的$$mAP$$。
 
 <p align="center">计算mAP</p>
-<p align="center"><img src="README_Image\6.png"  height = 35 width = 400 alt="search result"/></p>
+<p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/6.png"  height = 35 width = 400 alt="search result"/></p>
