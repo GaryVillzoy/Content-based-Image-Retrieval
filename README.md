@@ -21,7 +21,7 @@
 1. 首先要选择训练模型。点击$$Select A Model$$即可选择文件，直接使用`imagenet-vgg-f.mat`文件即可。
 
 <p align="center">选择训练模型</p>
-<p align="center"><img src="README_Image\1.png"  width = 400 alt="search result"/></p>
+<p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/1.png"  width = 400 alt="search result"/></p>
 
 2. 然后要回答一些问题，比如$$MatConvNet$$是否已经编译过和选择的数据集是否为$$mat$$文件（即数据集是否已经完成特征提取）。如果网络为编译过，则之后系统会自动进行编译，不过需要一点时间。如果数据集没有完成特征提取，则之后选择数据集文件夹，系统会自动进行特征提取，但也要消耗一点时间。
 
