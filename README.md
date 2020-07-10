@@ -4,7 +4,7 @@
 
 1. 对于**安装有MATLAB的用户**可直接运行使用`CBIR_Demo.exe`文件，或是直接运行`Content_based_Image_Retrieval.mlapp`文件；否则应运行`CBIR_Demo_web.exe`文件进行Runtime的安装，再进行使用。
 
-   【**注意**】`CBIR_Demo.exe`文件只是该系统的简单样例示范模型，因系统使用了$$MEX$$，在打包时会出问题，所以想要测试完整功能请使用$$MATLAB$$运行`CBIR_Demo_web.exe`。
+   【**注意**】`CBIR_Demo.exe`文件只是该系统的简单样例示范模型，因系统使用了$$MEX$$，在打包时会出问题，所以想要测试完整功能请使用 $$MATLAB$$ 运行`CBIR_Demo_web.exe`。
 
 ### 二、相关代码文件说明
 
