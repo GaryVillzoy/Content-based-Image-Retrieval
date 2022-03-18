@@ -1,49 +1,49 @@
-# 基于内容图像检索系统
+# Content-based Image Retrieval (CBIR) System
 
-### 一、相关代码文件说明
+### I. Source Code Files
 
-1. 直接在MATLAB中打开`Content_based_Image_Retrieval.mlapp`，每个按键的功能都在用户界面显示了，相关回调函数也根据功能实现，可以自行根据想要的功能查看。
-2. `cal_mAP_codes.rar`压缩包中的代码文件用于计算系统的mAP，`getResultFile***128D`和`getResultFile***4096D`分别为根据官方给出的groundtruth文件在128维数或4096维数下的检索输出排名文件，用于之后计算mAP使用；`calMAP***128D.m`和`calMAP***4096D.m`则分别使用前面获得的排名为文件计算某数据集在128维数或4096维数下的mAP。
+1. Open file `Content_based_Image_Retrieval.mlapp` in Matlab to display the user interface and view every function.
+2. `cal_mAP_codes.rar` contains source code files used to calculate the mAP of the system. `getResultFile***128D` and `getResultFile***4096D` denote the retrieval ranking in the dimension of 128 and 4096, respectively, according to the official groundtruth files of the datasets used. `calMAP***128D.m` and `calMAP***4096D.m` are used to calculate the mAP of a dataset in 128 and 4096 dimensions, respectively, using the ranking obtained earlier.
 
-### 二、相关数据文件说明
+### II. Model and Data Sets
 
-1. `imagenet-vgg-f.mat`文件是MatConvNet提供的VGG网络预训练模型，可直接使用。
-2. Data文件夹中存放的是程序所需的所有数据文件。其中`resultFile***---D.dat`为某数据集在相应维数下根据groundtruth文件检索输出的排名文件；`***FeaturesNorm.mat`用于存储某数据集所有图像在4096维数下的特征向量；`***128D.mat`则存储某数据集所有图像在128维数下的特征向量；`gnd_Oxford.mat`为官方给出的Oxford5k数据集groundtruth信息综合文件；`holidays_images.dat`也是官方给出的文件，用于计算Holidays数据集的mAP。
+1. `imagenet-vgg-f.mat` is a pre-trained model of the VGG network provided by MatConvNet and can be used directly.
+2. The Data folder holds all the data files required by the program. `resultFile***---D.dat` presents the retrieval ranking of a dataset in the corresponding dimension based on its groundtruth file,. `***FeaturesNorm.mat` stores the feature vectors of all the images of a dataset in the dimension of 4096, while `***128D.mat` stores that in the dimension of 128. `gnd_Oxford.mat` is the groundtruth file for the Oxford5k dataset. `holidays_images.dat` is also the official file for calculating the mAP of the Holidays dataset.
 
-### 三、APP使用教程
+### III. User Guide
 
-1. 首先要选择训练模型。点击Select A Model即可选择文件，直接使用`imagenet-vgg-f.mat`文件即可。
+1. First, users are required to choose a model for the image retrieval later. Click "Select A Model" to select the model file, i.e., `imagenet-vgg-f.mat`.
 
-<p align="center">选择训练模型</p>
+<p align="center">Select your model</p>
 <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/1.png"  width = 400 alt="search result"/></p>
 
-2. 然后要回答一些问题，比如MatConvNet是否已经编译过和选择的数据集是否为mat文件（即数据集是否已经完成特征提取）。如果网络为编译过，则之后系统会自动进行编译，不过需要一点时间。如果数据集没有完成特征提取，则之后选择数据集文件夹，系统会自动进行特征提取，但也要消耗一点时间。
+2. Then users need to answer the following questions, that is, whether MatConvNet has been compiled and whether the dataset that will be selected is a mat file (i.e., whether the image dataset has been feature-extracted). If the network has not been compiled, then the system will automatically compile it afterwards, but it will take a while. If the dataset is not feature-extracted, the system will automatically perform feature extraction after selecting the image dataset, which also consumes some time.
 
-   <p align="center">勾选回答问题</p>
+   <p align="center">Answer some questions</p>
    <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/2.png"  width = 400 alt="search result"/></p>
 
-3. 之后就是根据前面回答的问题进行数据集的选取并判断是否需要提取特征向量。如果前面勾选了数据集是mat文件的话这里的数据集只能选择mat文件，且系统自动根据文件名字判断数据的维数；反之则只能选择文件，Extract features按钮将可用，用户需手动选择提取的特征维数。
+3. After that, users can select the dataset for image retrieval. If the dataset is a mat file, the proposed system automatically determines the dimension of the data based on the file name. Otherwise, the "Extract features" button will be available, and users are required to manually select the dimension of features.
 
-   <p align="center">数据集相关操作</p>
+   <p align="center">Import the dataset</p>
    <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/3.png"  width = 400 alt="search result"/></p>
 
-4. 最后就是开始检索。用户可通过调整Retrieval Number来选择检索结果返回图片数，然后点击Start retrieval选择需要检索的图像，然后等待输出结果即可。
+4. Eventually, users can perform image retrieval. Users can select the number of images to be retrieved by adjusting "Retrieval Number", then click "Start retrieval" button to select the source images. 
 
-<p align="center">开始检索</p>
+<p align="center">Perform retrieval</p>
 <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/4.png"  height = 250 width = 300 alt="search result"/></p>
 
-5. 检索结果可直接在用户界面下方看到。排名从高到低会从左到右输出，并且输出此次检索的用时。如果用户选择的返回结果图片数大于3，则结果会通过弹窗的方式显示。
+5. Generally, the retrieval result will be display on the bottom of the user interface. The images are placed in a descending order of similarity. The query time is also presented. If the number of images to be retrieved is greater than 3, the results will be displayed via a pop-up window.
 
-<p align="center">返回结果</p>
+<p align="center">Display results</p>
 <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/5.png"  height = 200 width = 500 alt="search result"/></p>
 
-6. 在用户界面最下方可以选择数据集，并点击Calculate按钮计算数据集在该系统下的mAP。
+6. User can also calculate the mAP of a given dataset. 
 
-<p align="center">计算mAP</p>
+<p align="center">Calculate mAP</p>
 <p align="center"><img src="https://github.com/GaryVillzoy/Content-based-Image-Retrieval/blob/master/README_images/6.png"  height = 35 width = 400 alt="search result"/></p>
 
-### 四、注意事项
+### IV. Cautions
 
-1. 请务必提前了解MatConvNet工具箱。
+1. Be sure to check out the MatConvNet toolbox in advance.
 
-2. 请自行在官网下载预训练模型，本系统初步使用的预训练模型为imagenet-vgg-f.mat。
+2. Please download the pre-training model from the official website first. The pre-training model used in this system is `imagenet-vgg-f.mat`.
